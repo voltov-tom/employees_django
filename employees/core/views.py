@@ -3,7 +3,7 @@ from rest_framework.mixins import CreateModelMixin, UpdateModelMixin, RetrieveMo
 from rest_framework.viewsets import ModelViewSet, GenericViewSet
 
 from core.models import Employee
-from core.serializers import EmployeesSerializer
+from core.serializers import EmployeesSerializer, EmployeesUpdateSerializer
 
 
 class EmployeesListView(ModelViewSet):
@@ -21,4 +21,4 @@ class EmployeeInsertView(GenericAPIView, CreateModelMixin):
 
 class EmployeeUpdateView(GenericViewSet, RetrieveModelMixin, UpdateModelMixin):
     queryset = Employee.objects.all()
-    serializer_class = EmployeesSerializer
+    serializer_class = EmployeesUpdateSerializer
